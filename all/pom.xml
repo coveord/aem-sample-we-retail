@@ -119,6 +119,17 @@
                         <artifactId>content-package-maven-plugin</artifactId>
                         <executions>
                             <execution>
+                                <id>uninstall-content-package</id>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>uninstall</goal>
+                                </goals>
+                                <configuration>
+                                    <name>we.retail.all</name>
+                                    <failOnError>false</failOnError>
+                                </configuration>
+                            </execution>
+                            <execution>
                                 <id>install-package</id>
                                 <goals>
                                     <goal>install</goal>
