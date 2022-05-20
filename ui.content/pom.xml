@@ -123,6 +123,7 @@
                             <name>we.retail.ui.apps</name>
                             <version>[4.0.0,)</version>
                         </dependency>
+                        <!--https://github.com/adobe/aem-core-wcm-components/releases?expanded=true&page=2&q=2.4-->
                         <dependency>
                             <group>adobe/aem6/sample</group>
                             <name>we.retail.commons.content</name>

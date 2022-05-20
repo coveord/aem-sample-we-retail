@@ -19,3 +19,4 @@
 modal-search.js
 subitems.js
 utilities.js
+coveo.js

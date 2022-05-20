@@ -24,9 +24,56 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-12">
-                        <sly data-sly-test="${isCommunitiesPage}" data-sly-resource="${'./search' @ resourceType='weretail/components/structure/search', selectors='community'}"></sly>
-                        <sly data-sly-test="${!isCommunitiesPage}" data-sly-resource="${'./search' @ resourceType='weretail/components/structure/search', decoration='true'}"></sly>
+                    <div class="col-md-12 global-search-container">
+                        <atomic-search-interface class="search-global">
+                            <atomic-search-layout>
+                                <atomic-layout-section section="search">
+                                    <atomic-search-box>
+                                        <atomic-search-box-query-suggestions></atomic-search-box-query-suggestions>
+                                    </atomic-search-box>
+                                </atomic-layout-section>
+                                <atomic-layout-section section="main">
+                                    <atomic-layout-section section="status">
+                                        <atomic-breadbox></atomic-breadbox>
+                                        <atomic-query-summary></atomic-query-summary>
+                                        <atomic-refine-toggle></atomic-refine-toggle>
+                                        <atomic-sort-dropdown>
+                                            <atomic-sort-expression
+                                                    expression="relevancy descending"
+                                                    label="Relevance">
+                                            </atomic-sort-expression>
+                                            <atomic-sort-expression
+                                                    expression="date descending"
+                                                    label="Date">
+                                            </atomic-sort-expression>
+                                        </atomic-sort-dropdown>
+                                        <atomic-did-you-mean></atomic-did-you-mean>
+                                    </atomic-layout-section>
+                                    <atomic-layout-section section="results">
+                                        <atomic-result-list
+                                                density="compact"
+                                                display="list"
+                                                image-size="icon">
+                                            <atomic-result-template>
+                                                <template>
+                                                    <atomic-result-section-title-metadata>
+                                                        <atomic-result-printable-uri></atomic-result-printable-uri>
+                                                    </atomic-result-section-title-metadata>
+                                                    <atomic-result-section-title>
+                                                        <atomic-result-link target="_blank"></atomic-result-link>
+                                                    </atomic-result-section-title>
+                                                    <atomic-result-section-excerpt>
+                                                        <atomic-result-text field="excerpt"></atomic-result-text>
+                                                    </atomic-result-section-excerpt>
+                                                </template>
+                                            </atomic-result-template>
+                                        </atomic-result-list>
+                                        <atomic-query-error></atomic-query-error>
+                                        <atomic-no-results></atomic-no-results>
+                                    </atomic-layout-section>
+                                </atomic-layout-section>
+                            </atomic-search-layout>
+                        </atomic-search-interface>
                     </div>
                 </div>
             </div>
