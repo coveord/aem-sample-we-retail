@@ -152,6 +152,7 @@
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
                 <configuration>
+                    <skip>true</skip>
                     <excludes combine.children="append">
                         <!--  Used by maven-remote-resources-plugin -->
                         <exclude>src/main/appended-resources/META-INF/*</exclude>
@@ -222,7 +223,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-scr-plugin</artifactId>
-                    <version>1.20.0</version>
+                    <version>1.26.0</version>
                     <dependencies>
                         <dependency>
                             <groupId>org.slf4j</groupId>
